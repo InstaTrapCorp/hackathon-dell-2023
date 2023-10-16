@@ -101,7 +101,7 @@
       }
 
       #dark-bg {
-        background-color: #111;
+        background-color: #036761;
       }
 
       .dropdown {
@@ -190,7 +190,9 @@
             <!-- Settings Icon -->
           </li>
           <li class="nav-item">
-            <a id="logout-link" class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i></a>
+            <a id="logout-link" class="nav-link" href="#"
+              ><i class="fas fa-sign-out-alt"></i
+            ></a>
             <!-- Account Icon -->
           </li>
         </ul>
@@ -346,6 +348,21 @@
         });
     </script>
 
+    <script>
+      // Your Power BI Embed Configuration
+      var config = {
+        type: "dashboard",
+        id: "40798960-7caa-4dc2-b0ce-2c4e954ca891", // Replace with your dashboard ID
+        embedUrl: "http://127.0.0.1:5500/html/dashboard.html", // Replace with your embed URL
+        token: "2Q7INEHvkbJJfXvLHNJEMH7bnw+1CLhpDCz1gUgXVzc=", // Replace with your embed token
+      };
+
+      // Get a reference to the container element
+      var reportContainer = document.getElementById("reportContainer");
+
+      // Embed the Power BI dashboard
+      var dashboard = powerbi.embed(reportContainer, config);
+    </script>
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
