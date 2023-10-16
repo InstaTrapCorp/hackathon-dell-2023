@@ -199,3 +199,8 @@
 .circle i {
     transform: rotate(45deg);
 }
+
+.sidenav li a.active {
+  background-color: #3498db;
+  color: white;
+}

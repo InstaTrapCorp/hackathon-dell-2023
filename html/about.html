@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tips and Advices</title>
+    <title>About Us - EnerGreen</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -15,7 +15,7 @@
     />
     <link
       rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
     <style>
       /* Add custom CSS to create space for the top bar */
@@ -25,15 +25,6 @@
         text-align: center;
         padding: 10px 0;
       }
-
-      .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000; /* Adjust the z-index as needed to ensure it's above other content */
-      }
-
       .sidenav {
         height: calc(100vh - 53.5px); /* Adjust to your needs */
         position: fixed;
@@ -47,7 +38,6 @@
       }
       .content {
         height: calc(100vh - 56px); /* Adjust to your needs */
-        margin-top: 56px;
         margin-left: 250px; /* Adjust to match the sidebar's width */
         padding: 15px;
         background-color: #f0f0f0; /* Set the background color for the content area */
@@ -88,40 +78,42 @@
         display: flex;
         justify-content: center; /* Horizontally center */
         align-items: center; /* Vertically center */
-        margin-top: 50px;
-        margin-bottom: 40px;
+        margin: 120px 10px;
       }
 
       #dark-bg {
         background-color: #111;
       }
 
-      .circle-container {
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .circle {
+      /* Custom CSS for nature-themed About Us page */
+      footer {
         text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      }
+      .about-us {
+        background-image: url("images/nature.jpeg");
+        background-size: cover;
+        padding: 50px 0;
+        color: #000000;
+      }
+      .about-us h2,
+      .team h2 {
+        color: #3b9c9c;
+      }
+      .about-us p {
+        text-align: center;
+      }
+      .team p {
+        text-align: center;
       }
 
-      .circle i {
-        font-size: 24px; /* Adjust the size as needed */
-      }
-
-      .circle p {
-        margin: 0;
-        line-height: 48px;
-        font-size: 12px;
-        color: #111;
-        font-weight: bolder;
-      }
-
-      #research {
-        margin-bottom: 20px;
+      /* Add this CSS to style the image banner */
+      .banner-image {
+        display: block;
+        margin: 0 auto; /* Center the image horizontally */
+        margin-bottom: 30px;
+        max-width: 100%;
+        border-radius: 8px; /* Add rounded corners for a pleasant look */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
       }
     </style>
   </head>
@@ -145,9 +137,9 @@
     <!-- Sidebar -->
     <div class="sidenav">
       <ul>
-        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html" class="active">About Us</a></li>
         <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="tips.html" class="active">Tips & Solutions</a></li>
+        <li><a href="tips.html">Tips & Solutions</a></li>
         <li><a href="support.html">User Support</a></li>
         <!-- Add more sidebar links as needed -->
       </ul>
@@ -155,104 +147,47 @@
 
     <!-- Content -->
     <div class="content">
-      <h2>Energy Saving Tips</h2>
-      <h3>Find out more bright ways to save energy for the environment</h3>
-      <!-- Your page content goes here -->
-      <div class="container">
-        <div class="arrow left-arrow">&lt;</div>
-        <div class="circle-container">
-          <div class="circle">
-            <i class="fas fa-home"></i>
-            <p>General</p>
-          </div>
-          <div class="circle">
-            <i class="fas fa-shopping-basket"></i>
-            <p>Refrigerator</p>
-          </div>
-          <div class="circle">
-            <i class="fas fa-lightbulb"></i>
-            <p>Lamp</p>
-          </div>
-          <div class="circle">
-            <i class="fas fa-tint"></i>
-            <p>Water</p>
-          </div>
-          <div class="circle">
-            <i class="fas fa-snowflake"></i>
-            <p>Air Conditioner</p>
-          </div>
-        </div>
-        <div class="arrow right-arrow">&gt;</div>
-      </div>
-      <div>
-        <div class="dark-bg center">
-          <div class="card">
-            Many devices and appliances continue to consume energy even when
-            turned off. Unplug chargers, unused electronics, and appliances when
-            they're not in use to prevent "phantom" energy consumption.
-          </div>
-          <div class="card">
-            Inspect doors, windows, and other openings for drafts. Seal any gaps
-            with weatherstripping or caulk to prevent warm or cool air from
-            escaping, reducing the need for heating or cooling.
-          </div>
-          <div class="card">
-            Replace incandescent and CFL light bulbs with energy-efficient LED
-            bulbs. LEDs use significantly less electricity and last longer,
-            reducing energy and replacement costs.
-          </div>
-          <!-- Add more cards here -->
-        </div>
+      <main>
+        <section class="about-us">
+          <img src="nature.jpeg" alt="Nature Banner" class="banner-image" />
+          <h2>About Us</h2>
+          <p>
+            EnerGreen, established in 2023, is your dedicated partner in
+            promoting a greener, more energy-efficient world. Our mission is to
+            harness the power of nature to help consumers predict, observe, and
+            understand their energy usage.
+          </p>
+          <p>
+            Our goal is to provide innovative solutions that save electricity,
+            reduce environmental impact, and empower individuals to make
+            informed decisions about their energy consumption. We believe in the
+            harmony between nature and technology, and we're committed to a
+            sustainable future.
+          </p>
+          <p>
+            Join us on our journey to a greener, cleaner world. Together, we can
+            make a significant impact and leave a healthier planet for future
+            generations.
+          </p>
+        </section>
 
-        <script>
-          const carousel = document.querySelector(".carousel");
-          const cards = document.querySelectorAll(".card");
-          const dots = document.querySelectorAll(".dot");
-          let currentIndex = 0;
+        <section class="team">
+          <h2>Our Team</h2>
+          <p>
+            Our success is driven by a passionate team dedicated to the mission
+            of EnerGreen. Meet the individuals who bring our vision to life and
+            work tirelessly for a sustainable future.
+          </p>
+          <!-- You can include brief profiles of key team members if desired. -->
+        </section>
+      </main>
 
-          function prevSlide() {
-            currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-            updateCarousel();
-          }
-
-          function nextSlide() {
-            currentIndex = (currentIndex + 1) % cards.length;
-            updateCarousel();
-          }
-
-          function updateCarousel() {
-            const cardWidth = cards[currentIndex].offsetWidth;
-            carousel.style.transform = `translateX(-${
-              currentIndex * cardWidth
-            }px)`;
-            updateDots();
-          }
-
-          function updateDots() {
-            dots.forEach((dot, index) => {
-              if (index === currentIndex) {
-                dot.classList.add("active-dot");
-              } else {
-                dot.classList.remove("active-dot");
-              }
-            });
-          }
-
-          dots.forEach((dot, index) => {
-            dot.addEventListener("click", () => {
-              currentIndex = index;
-              updateCarousel();
-            });
-          });
-
-          updateCarousel();
-        </script>
-      </div>
-      <div class="research">
-        <h2>Research Approval:</h2>
-        <h3>https://www.example.com/</h3>
-      </div>
+      <footer>
+        <!-- Your footer content goes here -->
+        <p>&copy; 2023 EnerGreen. All rights reserved.</p>
+      </footer>
     </div>
+
     <!--- Do not touch! Firebase API --->
     <script type="module">
       // Import the functions you need from the SDKs you need
@@ -317,6 +252,7 @@
             });
         });
     </script>
+
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>

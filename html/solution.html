@@ -15,7 +15,7 @@
     />
     <link
       rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
     <style>
       /* Add custom CSS to create space for the top bar */
@@ -25,15 +25,6 @@
         text-align: center;
         padding: 10px 0;
       }
-
-      .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000; /* Adjust the z-index as needed to ensure it's above other content */
-      }
-
       .sidenav {
         height: calc(100vh - 53.5px); /* Adjust to your needs */
         position: fixed;
@@ -47,7 +38,6 @@
       }
       .content {
         height: calc(100vh - 56px); /* Adjust to your needs */
-        margin-top: 56px;
         margin-left: 250px; /* Adjust to match the sidebar's width */
         padding: 15px;
         background-color: #f0f0f0; /* Set the background color for the content area */
@@ -88,47 +78,19 @@
         display: flex;
         justify-content: center; /* Horizontally center */
         align-items: center; /* Vertically center */
-        margin-top: 50px;
-        margin-bottom: 40px;
+        margin: 120px 10px;
       }
 
       #dark-bg {
         background-color: #111;
       }
 
-      .circle-container {
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .circle {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .circle i {
-        font-size: 24px; /* Adjust the size as needed */
-      }
-
-      .circle p {
-        margin: 0;
-        line-height: 48px;
-        font-size: 12px;
-        color: #111;
-        font-weight: bolder;
-      }
-
-      #research {
-        margin-bottom: 20px;
-      }
     </style>
   </head>
   <body>
     <!-- Top Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="about.html">EnerGreen</a>
+      <a class="navbar-brand" href="#">Energreen</a>
       <div class="ml-auto">
         <ul class="navbar-nav">
           <li class="nav-item">
@@ -136,7 +98,7 @@
             <!-- Settings Icon -->
           </li>
           <li class="nav-item">
-            <a id="logout-link" class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i></a>
+            <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
             <!-- Account Icon -->
           </li>
         </ul>
@@ -147,7 +109,8 @@
       <ul>
         <li><a href="about.html">About Us</a></li>
         <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="tips.html" class="active">Tips & Solutions</a></li>
+        <li><a href="solution.html" class="active">Solution</a></li>
+        <li><a href="tips.html">Tips & Advice</a></li>
         <li><a href="support.html">User Support</a></li>
         <!-- Add more sidebar links as needed -->
       </ul>
@@ -162,45 +125,28 @@
         <div class="arrow left-arrow">&lt;</div>
         <div class="circle-container">
           <div class="circle">
-            <i class="fas fa-home"></i>
-            <p>General</p>
+            <i class="fas fa-icon1"></i>
           </div>
           <div class="circle">
-            <i class="fas fa-shopping-basket"></i>
-            <p>Refrigerator</p>
+            <i class="fas fa-icon2"></i>
           </div>
           <div class="circle">
-            <i class="fas fa-lightbulb"></i>
-            <p>Lamp</p>
+            <i class="fas fa-icon3"></i>
           </div>
           <div class="circle">
-            <i class="fas fa-tint"></i>
-            <p>Water</p>
+            <i class="fas fa-icon4"></i>
           </div>
           <div class="circle">
-            <i class="fas fa-snowflake"></i>
-            <p>Air Conditioner</p>
+            <i class="fas fa-icon5"></i>
           </div>
         </div>
         <div class="arrow right-arrow">&gt;</div>
       </div>
       <div>
         <div class="dark-bg center">
-          <div class="card">
-            Many devices and appliances continue to consume energy even when
-            turned off. Unplug chargers, unused electronics, and appliances when
-            they're not in use to prevent "phantom" energy consumption.
-          </div>
-          <div class="card">
-            Inspect doors, windows, and other openings for drafts. Seal any gaps
-            with weatherstripping or caulk to prevent warm or cool air from
-            escaping, reducing the need for heating or cooling.
-          </div>
-          <div class="card">
-            Replace incandescent and CFL light bulbs with energy-efficient LED
-            bulbs. LEDs use significantly less electricity and last longer,
-            reducing energy and replacement costs.
-          </div>
+          <div class="card">Card 1 Content</div>
+          <div class="card">Card 2 Content</div>
+          <div class="card">Card 3 Content</div>
           <!-- Add more cards here -->
         </div>
 
@@ -248,75 +194,12 @@
           updateCarousel();
         </script>
       </div>
-      <div class="research">
+      <div>
         <h2>Research Approval:</h2>
         <h3>https://www.example.com/</h3>
       </div>
     </div>
-    <!--- Do not touch! Firebase API --->
-    <script type="module">
-      // Import the functions you need from the SDKs you need
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
-      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-analytics.js";
-      import {
-        getAuth,
-        createUserWithEmailAndPassword,
-        signInWithEmailAndPassword,
-        signOut,
-      } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
 
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      const firebaseConfig = {
-        apiKey: "AIzaSyATd-XimLnU1nMIyy7s-hecQH8wQO1vkvs",
-        authDomain: "ochobot-h2h-dell-2023.firebaseapp.com",
-        projectId: "ochobot-h2h-dell-2023",
-        storageBucket: "ochobot-h2h-dell-2023.appspot.com",
-        messagingSenderId: "521755886943",
-        appId: "1:521755886943:web:0afcc2185709d70549e2ea",
-        measurementId: "G-3GBG1JFPBC",
-      };
-
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
-      //const auth = getAuth(app);
-
-      console.log(app);
-    </script>
-    <!--- Do not touch! Firebase API --->
-
-    <script type="module">
-      // JavaScript code to handle user login
-      import {
-        getAuth,
-        createUserWithEmailAndPassword,
-        signInWithEmailAndPassword,
-        signOut,
-      } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
-      document
-        .getElementById("logout-link")
-        .addEventListener("click", function (event) {
-          event.preventDefault(); // Prevent the default link behavior (navigating to # or current page)
-
-          const auth = getAuth(); // Replace with your Firebase Auth object reference
-
-          signOut(auth)
-            .then(() => {
-              // Sign-out successful.
-              console.log("User signed out successfully.");
-              alert("Signed out successfully.");
-              // You can also redirect the user to a different page after logout.
-              window.location.href = "login.html"; // Replace with your desired URL.
-            })
-            .catch((error) => {
-              // An error happened.
-              console.error("Sign-out error:", error);
-            });
-        });
-    </script>
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>

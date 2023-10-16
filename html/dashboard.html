@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Website</title>
+    <title>Dashboard</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -13,6 +13,13 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
     <style>
       /* Add custom CSS to create space for the top bar */
       .top-bar {
@@ -160,14 +167,22 @@
       }
 
       .split-right {
-        background-color: rgb(205, 214, 188); /* Right section background color */
+        background-color: rgb(
+          205,
+          214,
+          188
+        ); /* Right section background color */
+      }
+
+      td {
+        text-align: center;
       }
     </style>
   </head>
   <body>
     <!-- Top Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Energreen</a>
+      <a class="navbar-brand" href="about.html">EnerGreen</a>
       <div class="ml-auto">
         <ul class="navbar-nav">
           <li class="nav-item">
@@ -175,7 +190,7 @@
             <!-- Settings Icon -->
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
+            <a id="logout-link" class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i></a>
             <!-- Account Icon -->
           </li>
         </ul>
@@ -184,11 +199,10 @@
     <!-- Sidebar -->
     <div class="sidenav">
       <ul>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Dashboard</a></li>
-        <li><a href="#">Solution</a></li>
-        <li><a href="#">Tips & Advice</a></li>
-        <li><a href="#">User Support</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="tips.html">Tips & Solutions</a></li>
+        <li><a href="support.html">User Support</a></li>
         <!-- Add more sidebar links as needed -->
       </ul>
     </div>
@@ -218,47 +232,119 @@
           <div class="split-right">
             <!-- Right content goes here -->
             <h2>Prediction</h2>
-            <p>Year: </p>
-            <p>Country: </p>
-            <h2>Output:</h2>
-            <table border="1">
-                <tr>
-                    <td>Row 1, Column 1</td>
-                    <td>Row 1, Column 2</td>
-                </tr>
-                <tr>
-                    <td>Row 2, Column 1</td>
-                    <td>Row 2, Column 2</td>
-                </tr>
-                <tr>
-                    <td>Row 3, Column 1</td>
-                    <td>Row 3, Column 2</td>
-                </tr>
-                <tr>
-                    <td>Row 4, Column 1</td>
-                    <td>Row 4, Column 2</td>
-                </tr>
-                <tr>
-                    <td>Row 5, Column 1</td>
-                    <td>Row 5, Column 2</td>
-                </tr>
-                <tr>
-                    <td>Row 6, Column 1</td>
-                    <td>Row 6, Column 2</td>
-                </tr>
-                <tr>
-                    <td>Row 7, Column 1</td>
-                    <td>Row 7, Column 2</td>
-                </tr>
-                <tr>
-                    <td>Row 8, Column 1</td>
-                    <td>Row 8, Column 2</td>
-                </tr>
+            <div style="text-align: center">
+              <label
+                >Year: <input type="text" id="year" name="year" required
+              /></label>
+              <label
+                >Country:
+                <input type="text" id="country" name="country" required
+              /></label>
+            </div>
+            <h2 style="margin-top: 100px">Output:</h2>
+            <table border="1" style="margin-left: auto; margin-right: auto">
+              <tr>
+                <td><b>TYPES</b></td>
+                <td><b>CO2 EMISSION</b></td>
+              </tr>
+              <tr>
+                <td>COAL</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>OIL</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>GAS</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>CEMENT</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>FLARING</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>OTHERS</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>PER CAPITAL</td>
+                <td></td>
+              </tr>
             </table>
           </div>
         </div>
       </div>
     </div>
+
+    <!--- Do not touch! Firebase API --->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-analytics.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+        signOut,
+      } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyATd-XimLnU1nMIyy7s-hecQH8wQO1vkvs",
+        authDomain: "ochobot-h2h-dell-2023.firebaseapp.com",
+        projectId: "ochobot-h2h-dell-2023",
+        storageBucket: "ochobot-h2h-dell-2023.appspot.com",
+        messagingSenderId: "521755886943",
+        appId: "1:521755886943:web:0afcc2185709d70549e2ea",
+        measurementId: "G-3GBG1JFPBC",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      //const auth = getAuth(app);
+
+      console.log(app);
+    </script>
+    <!--- Do not touch! Firebase API --->
+
+    <script type="module">
+      // JavaScript code to handle user login
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+        signOut,
+      } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
+      document
+        .getElementById("logout-link")
+        .addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent the default link behavior (navigating to # or current page)
+
+          const auth = getAuth(); // Replace with your Firebase Auth object reference
+
+          signOut(auth)
+            .then(() => {
+              // Sign-out successful.
+              console.log("User signed out successfully.");
+              alert("Signed out successfully.");
+              // You can also redirect the user to a different page after logout.
+              window.location.href = "login.html"; // Replace with your desired URL.
+            })
+            .catch((error) => {
+              // An error happened.
+              console.error("Sign-out error:", error);
+            });
+        });
+    </script>
 
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
