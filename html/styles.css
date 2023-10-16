@@ -1,0 +1,201 @@
+/* styles.css */
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    transition: all 0.3s;
+}
+
+#sidebar.toggled {
+    margin-left: -250px;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    height: 100%;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 24px;
+  }
+
+  h3 {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .logo{
+    text-shadow: 2px 2px 4px #000000;
+    color:white;
+  }
+  
+  .nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  background-image: linear-gradient(to right, #9E768F , #9FA4C4);
+    color: #3D0E61;
+    height: 65px;
+    padding: 1em;
+    font-weight:bolder;
+    font-size:25px;
+  }
+  
+  .menu li:hover{
+    color:white;
+    cursor:pointer;
+  }
+  
+  .menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu > li {
+    margin: 0 1rem;
+    overflow: hidden;
+  }
+  /*Container for menu button  */
+  .menu-button-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #menu-toggle {
+    display: none;
+  }
+  
+  /*  Creating the menu button */
+  .menu-button,
+  .menu-button::before,
+  .menu-button::after {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    height: 6px;
+    width: 32px;
+    border-radius: 3px;
+  }
+  
+  .menu-button::before {
+    content: '';
+    margin-top: -8px;
+  }
+  
+  .menu-button::after {
+    content: '';
+    margin-top: 8px;
+  }
+
+  .sidenav {
+    height: calc(100vh - 53.5px); /* Adjust to your needs */
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    padding-top: 20px;
+}
+
+.sidenav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidenav ul li {
+    margin: 10px 0;
+}
+
+.sidenav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+.top-bar {
+    background-color: #333;
+    padding: 10px;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 15px;
+}
+
+/* Sidebar styling */
+/*.sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    padding-top: 20px; /* Padding at the top of the sidebar */
+/*}*/
+
+.sidenav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidenav ul li {
+    margin: 10px 0;
+}
+
+.sidenav ul li a {
+    color: #fff; /* Text color */
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+/* Hover effect for sidebar links */
+.sidenav ul li a:hover {
+    background-color: #555; /* Background color on hover */
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+}
+
+.arrow {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.circle-container {
+    display: flex;
+}
+
+.circle {
+    width: 120px;
+    height: 120px;
+    background-color: #3498db;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    margin: 0 10px;
+    font-size: 24px;
+}
+
+.circle i {
+    transform: rotate(45deg);
+}

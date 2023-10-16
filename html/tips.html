@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Website</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      /* Add custom CSS to create space for the top bar */
+      .top-bar {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+      }
+      .sidenav {
+        height: calc(100vh - 53.5px); /* Adjust to your needs */
+        position: fixed;
+        top: 53.5px; /* Adjust to the top bar's height */
+        left: 0;
+        width: 250px;
+        background-color: #111;
+        padding-top: 20px;
+        padding-right: 10px;
+        overflow-x: hidden;
+      }
+      .content {
+        height: calc(100vh - 56px); /* Adjust to your needs */
+        margin-left: 250px; /* Adjust to match the sidebar's width */
+        padding: 15px;
+        background-color: #f0f0f0; /* Set the background color for the content area */
+      }
+      .container {
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        height: 200px; /* Set the height as needed */
+      }
+      .carousel-container {
+        display: flex;
+        overflow: hidden;
+      }
+
+      .carousel {
+        display: flex;
+        transition: transform 0.5s;
+      }
+
+      .card {
+        flex: 0 0 300px; /* Card width; adjust as needed */
+        margin: 0 auto; /* Center the card horizontally */
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+      }
+
+      .arrow {
+        cursor: pointer;
+        font-size: 20px;
+        color: #333;
+      }
+
+      .center {
+        display: flex;
+        justify-content: center; /* Horizontally center */
+        align-items: center; /* Vertically center */
+        margin: 120px 10px;
+      }
+      
+      #dark-bg {
+        background-color: #111;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Energreen</a>
+      <div class="ml-auto">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-cog"></i></a>
+            <!-- Settings Icon -->
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
+            <!-- Account Icon -->
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Sidebar -->
+    <div class="sidenav">
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Solution</a></li>
+        <li><a href="#">Tips & Advice</a></li>
+        <li><a href="#">User Support</a></li>
+        <!-- Add more sidebar links as needed -->
+      </ul>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <h2>Energy Saving Tips</h2>
+      <h3>Find out more bright ways to save energy for the environment</h3>
+      <!-- Your page content goes here -->
+      <div class="container">
+        <div class="arrow left-arrow">&lt;</div>
+        <div class="circle-container">
+          <div class="circle">
+            <i class="fas fa-icon1"></i>
+          </div>
+          <div class="circle">
+            <i class="fas fa-icon2"></i>
+          </div>
+          <div class="circle">
+            <i class="fas fa-icon3"></i>
+          </div>
+          <div class="circle">
+            <i class="fas fa-icon4"></i>
+          </div>
+          <div class="circle">
+            <i class="fas fa-icon5"></i>
+          </div>
+        </div>
+        <div class="arrow right-arrow">&gt;</div>
+      </div>
+      <div>
+        <div class="dark-bg center">
+            <div class="card">Card 1 Content</div>
+            <div class="card">Card 2 Content</div>
+            <div class="card">Card 3 Content</div>
+            <!-- Add more cards here -->
+        </div>
+
+        <script>
+          const carousel = document.querySelector(".carousel");
+          const cards = document.querySelectorAll(".card");
+          const dots = document.querySelectorAll(".dot");
+          let currentIndex = 0;
+
+          function prevSlide() {
+            currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+            updateCarousel();
+          }
+
+          function nextSlide() {
+            currentIndex = (currentIndex + 1) % cards.length;
+            updateCarousel();
+          }
+
+          function updateCarousel() {
+            const cardWidth = cards[currentIndex].offsetWidth;
+            carousel.style.transform = `translateX(-${
+              currentIndex * cardWidth
+            }px)`;
+            updateDots();
+          }
+
+          function updateDots() {
+            dots.forEach((dot, index) => {
+              if (index === currentIndex) {
+                dot.classList.add("active-dot");
+              } else {
+                dot.classList.remove("active-dot");
+              }
+            });
+          }
+
+          dots.forEach((dot, index) => {
+            dot.addEventListener("click", () => {
+              currentIndex = index;
+              updateCarousel();
+            });
+          });
+
+          updateCarousel();
+        </script>
+      </div>
+      <div>
+        <h2>Research Approval:</h2>
+        <h3>https://www.example.com/</h3>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </body>
+</html>

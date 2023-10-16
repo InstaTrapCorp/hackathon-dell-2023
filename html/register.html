@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+    <style>
+        .center {
+            margin: auto;
+            width: 50%;
+            border: 3px solid green;
+            padding: 10px;
+        }
+
+        body {
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .topnav {
+          overflow: hidden;
+          background-color: #333;
+        }
+        
+        .topnav a {
+          float: left;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+        }
+        
+        .topnav a:hover {
+          background-color: #ddd;
+          color: black;
+        }
+        
+        .topnav a.active {
+          background-color: #04AA6D;
+          color: white;
+        }
+
+        #grad1 {
+            height: calc(100vh - 53.5);
+            background-size: cover;
+            background-color: rgb(97, 230, 21); /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, rgb(62, 231, 11) , rgb(237, 237, 13));
+        }
+        
+        body {font-family: Arial, Helvetica, sans-serif;}
+
+        input[type=text], input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        }
+
+        button {
+        background-color: #04AA6D;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        }
+
+        button:hover {
+        opacity: 0.8;
+        }
+
+        .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #f44336;
+        }
+
+        .imgcontainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+        }
+
+        img.avatar {
+        width: 40%;
+        border-radius: 50%;
+        }
+
+        .container {
+        padding: 16px;
+        }
+
+        #loginbox {
+        background-color: #fff; /* Background color for the card */
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Box shadow for depth effect */
+        border-radius: 8px; /* Rounded corners for a card-like appearance */
+        padding: 20px; /* Add some padding to the content within the card */
+        margin: 10px; /* Add some margin for spacing */
+        /* You can also add more styles like a border, different fonts, etc. */
+        }
+
+
+        span.psw {
+        float: right;
+        padding-top: 16px;
+        }
+
+        /* Change styles for span and cancel button on extra small screens */
+        @media screen and (max-width: 300px) {
+        span.psw {
+            display: block;
+            float: none;
+        }
+        .cancelbtn {
+            width: 100%;
+        }
+        }
+
+        /*Form CSS*/
+
+        .center-container {
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        height: calc(100vh - 53.5px); /* Adjust to your needs */
+        }
+
+        /* Style form elements */
+        .form input {
+        border: none; /* Remove the default border */
+        outline: none; /* Remove the focus outline */
+        background: none; /* Remove the default background */
+        padding: 10px; /* Add some padding for spacing and appearance */
+        margin: 10px 0; /* Add margin between form elements */
+        width: 100%; /* Make the inputs fill the width */
+        }
+
+        .form button {
+        border: none; /* Remove the default border */
+        outline: none; /* Remove the focus outline */
+        background: #007BFF; /* Add a background color for the button */
+        color: #fff; /* Set text color */
+        padding: 10px 20px; /* Add padding for spacing */
+        cursor: pointer;
+        }
+
+        /* Style the button on hover */
+        .form button:hover {
+        background: #0056b3; /* Change the background color on hover */
+        }
+
+        .login-title {
+            font-size: 24px; /* Adjust the font size to make the title big */
+            margin: 0; /* Remove default margin for the title */
+            padding: 20px 0; /* Add some spacing around the title */
+            color: #333; /* Set the color of the title */
+            text-align: center;
+            }
+        
+        /***Dropdown***/
+            /* Style the button that triggers the dropdown */
+            .input-dropdown {
+            position: relative;
+            display: inline-block;
+            }
+
+            .dropdown-input {
+            width: 200px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            }
+
+            .dropdown-list {
+            display: none;
+            position: absolute;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            border: 1px solid #ccc;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+            background-color: #fff;
+            }
+
+            .dropdown-list li {
+            margin: 0;
+            padding: 0;
+            }
+
+            .dropdown-list a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+            }
+
+            .dropdown-list a:hover {
+            background-color: #f0f0f0;
+            }
+    </style>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Ochobot</title>
+  </head>
+  <body>
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </div>
+    <div id="grad1">
+        <form class="form center-container" action="/action_page.php" method="post">
+          <!--<div class="imgcontainer">
+            <img src="img_avatar2.png" alt="Avatar" class="avatar">
+          </div>-->
+        
+          <div class="container" id="loginbox">
+            <div class="login-title">Register</div>
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+        
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+                
+            <label for="role"><b>Role</b></label>
+            <div class="input-dropdown">
+                <input type="text" id="dropdown-input" class="dropdown-input" placeholder="Select an option" readonly>
+                <ul class="dropdown-list">
+                  <li><a href="#" data-value="Role A">Role A</a></li>
+                  <li><a href="#" data-value="Role B">Role B</a></li>
+                  <li><a href="#" data-value="Role C">Role C</a></li>
+                  <li><a href="#" data-value="Others">Others</a></li>
+                </ul>
+              </div>
+
+            <button type="submit">Login</button>
+            <!--<label>
+              <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>-->
+            <label></label>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+          </div>
+        
+          <!--<div class="container" style="background-color:#f1f1f1" id="loginbox">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+          </div>-->
+        </form>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+      </head>
+      <!--- Do not touch! Firebase API --->
+      <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyATd-XimLnU1nMIyy7s-hecQH8wQO1vkvs",
+          authDomain: "ochobot-h2h-dell-2023.firebaseapp.com",
+          projectId: "ochobot-h2h-dell-2023",
+          storageBucket: "ochobot-h2h-dell-2023.appspot.com",
+          messagingSenderId: "521755886943",
+          appId: "1:521755886943:web:0afcc2185709d70549e2ea",
+          measurementId: "G-3GBG1JFPBC"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const inputField = document.getElementById("dropdown-input");
+            const dropdownList = document.querySelector(".dropdown-list");
+
+            inputField.addEventListener("click", function () {
+                dropdownList.style.display = "block";
+            });
+
+            dropdownList.addEventListener("click", function (e) {
+                if (e.target.tagName === "A") {
+                    const selectedOption = e.target.dataset.value;
+                    inputField.value = selectedOption;
+                    dropdownList.style.display = "none";
+                }
+            });
+        });
+      </script>
+      <!--- Do not touch! Firebase API --->
+  </body>
+</html>
